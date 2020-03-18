@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- <meta name="viewport" content="width=750,target-densitydpi=device-dpi,user-scalable=no" /> -->
+    <meta name="viewport" content="width=device-width,target-densitydpi=device-dpi,user-scalable=no" />
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding: 50px 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="button" value="显示" onclick="interface.show()">
+    <input type="button" value="隐藏" onclick="interface.hide()">
+    <input type="button" value="播放" onclick="interface.play()">
+    <input type="button" value="暂停" onclick="interface.pause()">
+    <input type="button" value="动画暂停" onclick="interface.animation_pause()">
+    <input type="button" value="动画开始" onclick="interface.animation_start()">
+
+    <script src="soundplay.js"></script>
+    <script>
+        // 以下是调用示例
+        let interface = new SoundPlay({
+            src: 'https://static3.yscase.com/maotai/bgm.mp3', //mp3文件地址
+            autoplay: true, // 是否自动开始播放，默认 true
+            loop: true, // 是否循环播放，默认 true
+            icon: 'img/icon1.png', // 播放按钮图标
+            iconPause: 'img/icon2.png', // 播放按钮图标
+            animation: true, // 如果为 true 上面的icon转动，默认true 
+            x: 100, // x 坐标，可选 ，默认右上角
+            y: 20, // y 坐标，可选，默认右上角
+            w: 50, // 图片的宽 默认图片本身宽高
+            h: 50, // 图片的高 默认图片本身宽高
+        });
+
+        // 方法
+        // ineterface.pause() // 暂停播放
+
+        // ineterface.play() // 播放
+
+        // ineterface.hide() // 隐藏 icon
+
+        // ineterface.show() // 显示 icon
+
+        // interface.animation_pause() // icon 动画暂停
+
+        // interface.animation_start() // icon 动画开始
+    </script>
+</body>
+
+</html>
