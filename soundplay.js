@@ -13,11 +13,9 @@
 
 
         //如果在微信浏览器内 自动播放关闭
-
         this.playPlace() ? this.onOff = this.opts.autoplay : this.onOff = false;
 
-
-
+        this.animationAnim = null;
         this.winW = document.body.clientWidth; //获取屏幕宽度
         this.angle = 0; //icon旋转度数
 
@@ -85,13 +83,14 @@
         this.musicBox.append(this.musicAudio);
         document.body.append(this.musicBox);
 
-        //自动播放且有动画
-        if (this.opts.animation && this.onOff) this.play();
+        //自动播放
+        if (this.onOff) this.play();
 
         if (!this.onOff) this.pause();
 
         //如果不循环且播放完毕
         this.musicAudio.addEventListener('ended', () => {
+
             if (!this.opts.loop && this.onOff) {
                 this.pause();
             }
@@ -120,9 +119,13 @@
     SoundPlay.prototype.pause = function () {
         this.onOff = false;
         this.musicAudio.pause();
-        if (this.opts.iconPause) this.musicImg.src = this.opts.iconPause;
+        if (this.opts.iconPause && !this.onOff) {
+            this.musicImg.src = this.opts.iconPause;
+            this.angle = 0;
+        }
 
-        this.animation_pause();
+        if (this.opts.iconPause) this.musicImg.src = this.opts.iconPause;
+        if (this.opts.animation) this.animation_pause();
     }
 
     SoundPlay.prototype.play = function () {
@@ -137,7 +140,8 @@
 
         this.musicAudio.play();
         if (this.opts.iconPause) this.musicImg.src = this.opts.icon;
-        this.animation_start();
+
+        if (this.opts.animation) this.animation_start();
     }
 
     SoundPlay.prototype.animation_start = function () {
@@ -146,7 +150,7 @@
         this.angle >= 360 ? (this.angle = 0) : this.angle++;
 
         this.musicBox.style.transform = `rotate(${this .angle}deg)`;
-
+        if (this.opts.iconPause) this.musicImg.src = this.opts.icon;
         this.animationAnim = requestAnimationFrame(this.animation_start.bind(this));
 
     }
@@ -154,14 +158,10 @@
     SoundPlay.prototype.animation_pause = function () {
         if (this.animationAnim) cancelAnimationFrame(this.animationAnim);
 
-
-        if (this.opts.iconPause && !this.onOff) {
+        if (this.opts.iconPause) {
             this.musicBox.style.transform = `rotate(0deg)`;
-            this.musicImg.src = this.opts.iconPause;
-            this.angle = 0;
         }
         this.animationAnim = null;
-
     }
 
     window.SoundPlay = SoundPlay;
