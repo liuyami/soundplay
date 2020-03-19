@@ -3,7 +3,7 @@
 
 该库适用于H5中播放音频，满足绝大多数H5音频播放场景。
 
-**注意 : 使用时需先引入soundplay.js文件**
+**注意 : 使用时需先引入http://common.yscase.com/js/soundplay.js文件 (支持https)**
 
 ## new SoundPlay(params);
 
