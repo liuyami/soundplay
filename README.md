@@ -40,10 +40,10 @@
 ```
 
 let interface = new SoundPlay({
-  src:'http://doamian.com/name.mp3', //mp3文件地址
+  src:'http://domain.com/name.mp3', //mp3文件地址
   autoplay: true,   // 是否自动开始播放，默认 true
   loop: true,   // 是否循环播放，默认 true
-  icon: 'http://doamian.com/name.png', // 播放按钮图标
+  icon: 'http://domain.com/name.png', // 播放按钮图标
   iconPause: 'img/icon2.png', // 暂停按钮图标 
   animation: true, // 如果为 true 上面的icon转动，默认true 
   x: 100,   // x 坐标，可选 ，默认右上角
