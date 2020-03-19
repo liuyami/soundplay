@@ -40,7 +40,7 @@
 ```
 
 let interface = new SoundPlay({
-  src:'http://doamian.com/name.mp3', //mp3文件地址
+  src:'http://domian.com/name.mp3', //mp3文件地址
   autoplay: true,   // 是否自动开始播放，默认 true
   loop: true,   // 是否循环播放，默认 true
   icon: 'http://doamian.com/name.png', // 播放按钮图标
