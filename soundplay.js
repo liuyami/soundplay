@@ -1,17 +1,27 @@
 (function () {
     function SoundPlay(params) {
+
+        if (params === undefined || params === null) {
+            console.log("缺少必填参数params");
+            return false;
+        }
         //处理参数
         this.opts = Object.assign({
-            src: 'https://static3.yscase.com/maotai/bgm.mp3', //mp3文件地址
             autoplay: true, // 是否自动开始播放，默认 true
             loop: true, // 是否循环播放，默认 true
-            icon: 'https://static3.yscase.com/icon.png', // 播放按钮图标
             animation: true, // 如果为 true 上面的icon转动，默认true 
             x: 100, // x 坐标，可选 ，默认右上角
             y: 20, // y 坐标，可选，默认右上角
         }, params);
 
-
+        if (!this.opts.src) {
+            console.log("缺少必填参数src");
+            return false;
+        }
+        if (!this.opts.icon) {
+            console.log("缺少必填参数icon");
+            return false;
+        }
         //如果在微信浏览器内 自动播放关闭
         this.playPlace() ? this.onOff = this.opts.autoplay : this.onOff = false;
 
