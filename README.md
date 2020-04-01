@@ -53,13 +53,13 @@ let interface = new SoundPlay({
 });
 
 // 方法
-ineterface.pause()   // 暂停播放
+interface.pause()   // 暂停播放
 
-ineterface.play()   // 播放
+interface.play()   // 播放
 
-ineterface.hide()   // 隐藏 icon
+interface.hide()   // 隐藏 icon
 
-ineterface.show()   // 显示 icon
+interface.show()   // 显示 icon
 ```
 
 ### 注意 : 抖音 ， 微博 ，手机浏览器平台暂时无法使用音频自动播放 ，该库已默认设置暂停播放状态 ，需要用户手动触发播放 。
