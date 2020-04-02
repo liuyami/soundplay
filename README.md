@@ -3,7 +3,20 @@
 
 该库适用于H5中播放音频，满足绝大多数H5音频播放场景。
 
-**注意 : 使用时需先引入http://common.yscase.com/js/soundplay.js文件 (支持https)**
+## 安装
+
+* ### 使用CDN 方式
+
+```html
+<script src="//common.yscase.com/js/soundplay.js"></script>
+```
+
+* ### 使用NPM方式
+
+```html
+yarn add ys-sound-play # 或 npm i ys-sound-play --save
+import SoundPlay from 'ys-sound-play'
+```
 
 ## new SoundPlay(params);
 
@@ -40,16 +53,16 @@
 ```
 
 let interface = new SoundPlay({
-  src:'http://domain.com/name.mp3', //mp3文件地址
-  autoplay: true,   // 是否自动开始播放，默认 true
-  loop: true,   // 是否循环播放，默认 true
+  src:'http://domain.com/name.mp3',   //mp3文件地址
+  autoplay: true,                     // 是否自动开始播放，默认 true
+  loop: true,                         //  是否循环播放，默认 true
   icon: 'http://domain.com/name.png', // 播放按钮图标
-  iconPause: 'img/icon2.png', // 暂停按钮图标 
-  animation: true, // 如果为 true 上面的icon转动，默认true 
-  x: 100,   // x 坐标，可选 ，默认右上角
-  y: 20,    // y 坐标，可选，默认右上角
-  w: 50, // 图片的宽 默认图片本身宽高
-  h: 50, // 图片的高 默认图片本身宽高
+  iconPause: 'img/icon2.png',         // 暂停按钮图标 
+  animation: true,                    // 如果为 true 上面的icon转动，默认true 
+  x: 100,                             // x 坐标，可选 ，默认右上角
+  y: 20,                              // y 坐标，可选，默认右上角
+  w: 50,                              // 图片的宽 默认图片本身宽高
+  h: 50,                              // 图片的高 默认图片本身宽高
 });
 
 // 方法
@@ -62,4 +75,4 @@ interface.hide()   // 隐藏 icon
 interface.show()   // 显示 icon
 ```
 
-### 注意 : 抖音 ， 微博 ，手机浏览器平台暂时无法使用音频自动播放 ，该库已默认设置暂停播放状态 ，需要用户手动触发播放 。
+注意 : 抖音 ， 微博 ，手机浏览器平台暂时无法使用音频自动播放 ，该库已默认设置暂停播放状态 ，需要用户手动触发播放 。
